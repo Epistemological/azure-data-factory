@@ -1,0 +1,9 @@
+{
+	"name": "denkasdemofactory",
+	"location": "northeurope",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "1961acde-ab38-4386-aa26-eb4f68f17264",
+		"tenantId": "19e2b708-bf12-4375-9719-8dec42771b3e"
+	}
+}
