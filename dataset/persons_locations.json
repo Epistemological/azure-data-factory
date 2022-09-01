@@ -5,6 +5,12 @@
 			"referenceName": "denkas_blob_storage",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"lastname": {
+				"type": "string",
+				"defaultValue": null
+			}
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
