@@ -1,0 +1,7 @@
+{
+	"name": "demo-pipeline",
+	"properties": {
+		"description": "my first pipeline in data factory",
+		"annotations": []
+	}
+}
