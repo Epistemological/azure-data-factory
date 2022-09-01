@@ -11,6 +11,9 @@
 				"defaultValue": null
 			}
 		},
+		"folder": {
+			"name": "demo"
+		},
 		"annotations": [],
 		"type": "Json",
 		"typeProperties": {
