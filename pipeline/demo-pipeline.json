@@ -4,7 +4,7 @@
 		"description": "my first pipeline in data factory",
 		"activities": [
 			{
-				"name": "Copy data1",
+				"name": "Copy persons data",
 				"type": "Copy",
 				"dependsOn": [],
 				"policy": {
@@ -16,24 +16,63 @@
 				},
 				"userProperties": [],
 				"typeProperties": {
-					"enableStaging": false
-				}
-			},
-			{
-				"name": "Wait1",
-				"type": "Wait",
-				"dependsOn": [
+					"source": {
+						"type": "JsonSource",
+						"storeSettings": {
+							"type": "AzureBlobStorageReadSettings",
+							"recursive": true,
+							"enablePartitionDiscovery": false
+						},
+						"formatSettings": {
+							"type": "JsonReadSettings"
+						}
+					},
+					"sink": {
+						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table dbo.persons",
+						"writeBehavior": "insert",
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
+					},
+					"enableStaging": false,
+					"translator": {
+						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"path": "['name']"
+								},
+								"sink": {
+									"name": "full_name",
+									"type": "String"
+								}
+							},
+							{
+								"source": {
+									"path": "['hometown']"
+								},
+								"sink": {
+									"name": "location_city",
+									"type": "String"
+								}
+							}
+						],
+						"collectionReference": "$['people']",
+						"mapComplexValuesToString": true
+					}
+				},
+				"inputs": [
 					{
-						"activity": "Copy data1",
-						"dependencyConditions": [
-							"Succeeded"
-						]
+						"referenceName": "persons_locations",
+						"type": "DatasetReference"
 					}
 				],
-				"userProperties": [],
-				"typeProperties": {
-					"waitTimeInSeconds": 1
-				}
+				"outputs": [
+					{
+						"referenceName": "AzureSqlTable1",
+						"type": "DatasetReference"
+					}
+				]
 			}
 		],
 		"annotations": []
