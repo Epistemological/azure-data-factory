@@ -20,6 +20,13 @@
 						"type": "DatasetReference"
 					},
 					"name": "MoviesClean"
+				},
+				{
+					"dataset": {
+						"referenceName": "transformedMovies",
+						"type": "DatasetReference"
+					},
+					"name": "moviesByYearSink"
 				}
 			],
 			"transformations": [
@@ -48,7 +55,13 @@
 				"     partitionFileNames:['movies_clean.csv'],",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     partitionBy('hash', 1)) ~> MoviesClean"
+				"     partitionBy('hash', 1)) ~> MoviesClean",
+				"moviesByYear sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     partitionFileNames:['movies-by-year.csv'],",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     partitionBy('hash', 1)) ~> moviesByYearSink"
 			]
 		}
 	}
