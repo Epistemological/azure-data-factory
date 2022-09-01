@@ -1,9 +1,12 @@
 {
-	"name": "AzureSqlTable1",
+	"name": "demoSqlTable",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "db_sql_database",
 			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "demo"
 		},
 		"annotations": [],
 		"type": "AzureSqlTable",

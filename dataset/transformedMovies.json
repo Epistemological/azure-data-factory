@@ -1,0 +1,25 @@
+{
+	"name": "transformedMovies",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "denkas_blob_storage",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "movies"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"container": "output"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
