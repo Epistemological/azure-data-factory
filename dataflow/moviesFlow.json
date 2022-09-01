@@ -6,14 +6,42 @@
 		"typeProperties": {
 			"sources": [
 				{
-					"name": "source1"
+					"dataset": {
+						"referenceName": "movies",
+						"type": "DatasetReference"
+					},
+					"name": "Movies"
 				}
 			],
-			"sinks": [],
-			"transformations": [],
+			"sinks": [
+				{
+					"dataset": {
+						"referenceName": "transformedMovies",
+						"type": "DatasetReference"
+					},
+					"name": "MoviesClean"
+				}
+			],
+			"transformations": [
+				{
+					"name": "yearExtraction"
+				}
+			],
 			"scriptLines": [
-				"source(allowSchemaDrift: true,",
-				"     validateSchema: false) ~> source1"
+				"source(output(",
+				"          movieId as string,",
+				"          title as string,",
+				"          genres as string",
+				"     ),",
+				"     allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     ignoreNoFilesFound: false) ~> Movies",
+				"Movies derive(year = toInteger(trim(right(title, 6), '()')),",
+				"          title = toString(left(title, length(title)-6))) ~> yearExtraction",
+				"yearExtraction sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true) ~> MoviesClean"
 			]
 		}
 	}
