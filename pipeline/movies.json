@@ -1,0 +1,7 @@
+{
+	"name": "movies",
+	"properties": {
+		"description": "demo pipeline for practicing of data transformation using a movie dataset",
+		"annotations": []
+	}
+}
