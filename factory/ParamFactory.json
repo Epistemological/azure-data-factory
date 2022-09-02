@@ -1,0 +1,9 @@
+{
+	"name": "ParamFactory",
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "32c7aadf-688f-41c7-be65-82619c4fced2",
+		"tenantId": "19e2b708-bf12-4375-9719-8dec42771b3e"
+	}
+}
