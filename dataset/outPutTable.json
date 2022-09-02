@@ -5,6 +5,11 @@
 			"referenceName": "outputDB",
 			"type": "LinkedServiceReference"
 		},
+		"parameters": {
+			"tableName": {
+				"type": "string"
+			}
+		},
 		"folder": {
 			"name": "parameters"
 		},
@@ -40,7 +45,10 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "cars"
+			"table": {
+				"value": "@dataset().tableName",
+				"type": "Expression"
+			}
 		}
 	}
 }

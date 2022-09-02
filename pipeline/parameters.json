@@ -44,13 +44,19 @@
 				"inputs": [
 					{
 						"referenceName": "inputCSV",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"filename": "planes.csv"
+						}
 					}
 				],
 				"outputs": [
 					{
 						"referenceName": "outPutTable",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"tableName": "planes"
+						}
 					}
 				]
 			}
