@@ -1,0 +1,25 @@
+{
+	"name": "inventory_parts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "powerBIBlob",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "legoAnalysis"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "lego_inventory_parts.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"quoteChar": "\""
+		},
+		"schema": []
+	}
+}
