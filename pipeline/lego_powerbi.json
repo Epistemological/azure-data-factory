@@ -1,5 +1,5 @@
 {
-	"name": "powerBi",
+	"name": "lego_powerbi",
 	"properties": {
 		"activities": [
 			{
@@ -92,8 +92,7 @@
 									"type": "Decimal",
 									"physicalType": "decimal"
 								}
-							},
-							null
+							}
 						],
 						"typeConversion": true,
 						"typeConversionSettings": {
@@ -117,6 +116,29 @@
 						}
 					}
 				]
+			},
+			{
+				"name": "noNanValues",
+				"type": "Filter",
+				"dependsOn": [
+					{
+						"activity": "cp_colors",
+						"dependencyConditions": [
+							"Succeeded"
+						]
+					}
+				],
+				"userProperties": [],
+				"typeProperties": {
+					"items": {
+						"value": "name",
+						"type": "Expression"
+					},
+					"condition": {
+						"value": "!= \"Unknown\"",
+						"type": "Expression"
+					}
+				}
 			}
 		],
 		"annotations": []
