@@ -13,7 +13,11 @@
 				}
 			],
 			"sinks": [],
-			"transformations": [],
+			"transformations": [
+				{
+					"name": "NoNanValues"
+				}
+			],
 			"scriptLines": [
 				"source(output(",
 				"          id as string,",
@@ -23,7 +27,8 @@
 				"     ),",
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     ignoreNoFilesFound: false) ~> color"
+				"     ignoreNoFilesFound: false) ~> color",
+				"color filter(ERROR_FUNCTION('')) ~> NoNanValues"
 			]
 		}
 	}
