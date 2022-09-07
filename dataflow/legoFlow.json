@@ -28,7 +28,7 @@
 				"     allowSchemaDrift: true,",
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> color",
-				"color filter(ERROR_FUNCTION('')) ~> NoNanValues"
+				"color filter(filter(name, name != \"Unknown\")) ~> NoNanValues"
 			]
 		}
 	}
