@@ -38,59 +38,34 @@
 							{
 								"source": {
 									"type": "String",
+									"physicalType": "String",
 									"ordinal": 1
 								},
 								"sink": {
-									"name": "Make",
-									"type": "String",
+									"name": "name",
 									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"type": "String",
+									"physicalType": "String",
 									"ordinal": 2
 								},
 								"sink": {
-									"name": "Model",
-									"type": "String",
+									"name": "rgb",
 									"physicalType": "nvarchar"
 								}
 							},
 							{
 								"source": {
 									"type": "String",
+									"physicalType": "String",
 									"ordinal": 3
 								},
 								"sink": {
-									"name": "Type",
-									"type": "String",
+									"name": "is_trans",
 									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"source": {
-									"type": "String",
-									"ordinal": 4
-								},
-								"sink": {
-									"name": "Origin",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "DriveTrain",
-									"type": "String",
-									"physicalType": "nvarchar"
-								}
-							},
-							{
-								"sink": {
-									"name": "Length",
-									"type": "Decimal",
-									"physicalType": "decimal"
 								}
 							}
 						],
