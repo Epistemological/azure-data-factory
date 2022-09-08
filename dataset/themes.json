@@ -1,5 +1,5 @@
 {
-	"name": "part_categories",
+	"name": "themes",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "powerBIBlob",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "lego_part_categories.csv",
+				"fileName": "lego_themes.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
@@ -28,6 +28,10 @@
 			},
 			{
 				"name": "name",
+				"type": "String"
+			},
+			{
+				"name": "parent_id",
 				"type": "String"
 			}
 		]
