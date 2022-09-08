@@ -37,7 +37,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "colors"
+			"table": "@dataset().tableName"
 		}
 	}
 }
