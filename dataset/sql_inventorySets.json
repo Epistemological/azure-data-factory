@@ -1,0 +1,19 @@
+{
+	"name": "sql_inventorySets",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "outputDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "legoAnalysis/output"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "inventorySets"
+		}
+	}
+}

@@ -1,0 +1,39 @@
+{
+	"name": "inventorySets",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "powerBIBlob",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "legoAnalysis"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "lego_inventory_sets.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "inventory_id",
+				"type": "String"
+			},
+			{
+				"name": "set_num",
+				"type": "String"
+			},
+			{
+				"name": "quantity",
+				"type": "String"
+			}
+		]
+	}
+}

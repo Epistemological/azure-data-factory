@@ -1,0 +1,19 @@
+{
+	"name": "sql_cat_part",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "outputDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "legoAnalysis/output"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "categoriesParts"
+		}
+	}
+}

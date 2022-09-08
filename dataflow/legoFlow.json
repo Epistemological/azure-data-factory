@@ -20,7 +20,7 @@
 				},
 				{
 					"dataset": {
-						"referenceName": "inventory_sets",
+						"referenceName": "inventorySets",
 						"type": "DatasetReference"
 					},
 					"name": "inventorySets"
@@ -75,6 +75,20 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink3"
+				},
+				{
+					"dataset": {
+						"referenceName": "sql_cat_part",
+						"type": "DatasetReference"
+					},
+					"name": "sink4"
+				},
+				{
+					"dataset": {
+						"referenceName": "sql_inventorySets",
+						"type": "DatasetReference"
+					},
+					"name": "sink5"
 				}
 			],
 			"transformations": [],
@@ -98,7 +112,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> inventoryParts",
 				"source(output(",
-				"          invent_id as string,",
+				"          inventory_id as string,",
 				"          set_num as string,",
 				"          quantity as string",
 				"     ),",
@@ -172,7 +186,27 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink3"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink3",
+				"partCategories sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink4",
+				"inventorySets sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink5"
 			]
 		}
 	}
