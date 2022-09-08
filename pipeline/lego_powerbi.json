@@ -91,29 +91,6 @@
 						}
 					}
 				]
-			},
-			{
-				"name": "noNanValues",
-				"type": "Filter",
-				"dependsOn": [
-					{
-						"activity": "cp_colors",
-						"dependencyConditions": [
-							"Succeeded"
-						]
-					}
-				],
-				"userProperties": [],
-				"typeProperties": {
-					"items": {
-						"value": "name",
-						"type": "Expression"
-					},
-					"condition": {
-						"value": "!= \"Unknown\"",
-						"type": "Expression"
-					}
-				}
 			}
 		],
 		"annotations": []
