@@ -52,10 +52,7 @@
 				"outputs": [
 					{
 						"referenceName": "db_colors",
-						"type": "DatasetReference",
-						"parameters": {
-							"dbo": "@pipeline().parameters.tableName"
-						}
+						"type": "DatasetReference"
 					}
 				]
 			}

@@ -5,12 +5,6 @@
 			"referenceName": "outputDB",
 			"type": "LinkedServiceReference"
 		},
-		"parameters": {
-			"dbo": {
-				"type": "string",
-				"defaultValue": "@dataset().tableName"
-			}
-		},
 		"folder": {
 			"name": "legoAnalysis/output"
 		},
@@ -37,7 +31,7 @@
 		],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "@dataset().tableName"
+			"table": "colors"
 		}
 	}
 }
