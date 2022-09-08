@@ -13,7 +13,24 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [],
+				"userProperties": [
+					{
+						"name": "Source",
+						"value": "input//lego_colors.csv"
+					},
+					{
+						"name": "Destination",
+						"value": "dbo.colors"
+					},
+					{
+						"name": "Source Type",
+						"value": "CSV"
+					},
+					{
+						"name": "Dest Type",
+						"value": "Azure SQL"
+					}
+				],
 				"typeProperties": {
 					"source": {
 						"type": "DelimitedTextSource",
