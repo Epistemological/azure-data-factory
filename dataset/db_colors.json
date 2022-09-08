@@ -1,0 +1,37 @@
+{
+	"name": "db_colors",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "outputDB",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "legoAnalysis/output"
+		},
+		"annotations": [],
+		"type": "AzureSqlTable",
+		"schema": [
+			{
+				"name": "id",
+				"type": "int",
+				"precision": 10
+			},
+			{
+				"name": "colorName",
+				"type": "varchar"
+			},
+			{
+				"name": "rgb",
+				"type": "varchar"
+			},
+			{
+				"name": "is_trans",
+				"type": "varchar"
+			}
+		],
+		"typeProperties": {
+			"schema": "dbo",
+			"table": "colors"
+		}
+	}
+}

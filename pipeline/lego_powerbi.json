@@ -28,8 +28,10 @@
 					},
 					"sink": {
 						"type": "AzureSqlSink",
+						"preCopyScript": "truncate table dbo.colors",
 						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false
+						"sqlWriterUseTableLock": false,
+						"disableMetricsCollection": false
 					},
 					"enableStaging": false,
 					"translator": {
@@ -38,34 +40,45 @@
 							{
 								"source": {
 									"type": "String",
-									"physicalType": "String",
 									"ordinal": 1
 								},
 								"sink": {
-									"name": "name",
-									"physicalType": "nvarchar"
+									"name": "id",
+									"type": "Int32",
+									"physicalType": "int"
 								}
 							},
 							{
 								"source": {
 									"type": "String",
-									"physicalType": "String",
 									"ordinal": 2
 								},
 								"sink": {
-									"name": "rgb",
-									"physicalType": "nvarchar"
+									"name": "colorName",
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							},
 							{
 								"source": {
 									"type": "String",
-									"physicalType": "String",
 									"ordinal": 3
 								},
 								"sink": {
+									"name": "rgb",
+									"type": "String",
+									"physicalType": "varchar"
+								}
+							},
+							{
+								"source": {
+									"type": "String",
+									"ordinal": 4
+								},
+								"sink": {
 									"name": "is_trans",
-									"physicalType": "nvarchar"
+									"type": "String",
+									"physicalType": "varchar"
 								}
 							}
 						],
@@ -84,11 +97,8 @@
 				],
 				"outputs": [
 					{
-						"referenceName": "outPutTable",
-						"type": "DatasetReference",
-						"parameters": {
-							"tableName": "lego_colors"
-						}
+						"referenceName": "db_colors",
+						"type": "DatasetReference"
 					}
 				]
 			}
