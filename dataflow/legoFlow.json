@@ -106,7 +106,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> inventorySets",
 				"source(output(",
-				"          part_cat_id as string,",
+				"          id as string,",
 				"          name as string",
 				"     ),",
 				"     allowSchemaDrift: true,",
