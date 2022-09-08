@@ -5,6 +5,9 @@
 			"referenceName": "outputDB",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "legoAnalysis/output"
+		},
 		"annotations": [],
 		"type": "AzureSqlTable",
 		"schema": [],

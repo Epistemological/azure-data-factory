@@ -5,6 +5,9 @@
 			"referenceName": "powerBIBlob",
 			"type": "LinkedServiceReference"
 		},
+		"folder": {
+			"name": "legoAnalysis"
+		},
 		"annotations": [],
 		"type": "DelimitedText",
 		"typeProperties": {
