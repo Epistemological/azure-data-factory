@@ -13,11 +13,10 @@
 		"schema": [
 			{
 				"name": "id",
-				"type": "int",
-				"precision": 10
+				"type": "varchar"
 			},
 			{
-				"name": "colorName",
+				"name": "name",
 				"type": "varchar"
 			},
 			{
