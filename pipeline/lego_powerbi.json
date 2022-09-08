@@ -3,8 +3,8 @@
 	"properties": {
 		"activities": [
 			{
-				"name": "cp_colors",
-				"type": "Copy",
+				"name": "legoFlow",
+				"type": "ExecuteDataFlow",
 				"dependsOn": [],
 				"policy": {
 					"timeout": "0.12:00:00",
@@ -13,99 +13,18 @@
 					"secureOutput": false,
 					"secureInput": false
 				},
-				"userProperties": [
-					{
-						"name": "Source",
-						"value": "input//lego_colors.csv"
-					},
-					{
-						"name": "Destination",
-						"value": "dbo.colors"
-					},
-					{
-						"name": "Source Type",
-						"value": "CSV"
-					},
-					{
-						"name": "Dest Type",
-						"value": "Azure SQL"
-					}
-				],
+				"userProperties": [],
 				"typeProperties": {
-					"source": {
-						"type": "DelimitedTextSource",
-						"storeSettings": {
-							"type": "AzureBlobStorageReadSettings",
-							"recursive": true,
-							"enablePartitionDiscovery": false
-						},
-						"formatSettings": {
-							"type": "DelimitedTextReadSettings"
-						}
+					"dataflow": {
+						"referenceName": "legoFlow",
+						"type": "DataFlowReference"
 					},
-					"sink": {
-						"type": "AzureSqlSink",
-						"writeBehavior": "insert",
-						"sqlWriterUseTableLock": false,
-						"disableMetricsCollection": false
+					"compute": {
+						"coreCount": 8,
+						"computeType": "General"
 					},
-					"enableStaging": false,
-					"translator": {
-						"type": "TabularTranslator",
-						"mappings": [
-							{
-								"source": {
-									"name": "id"
-								},
-								"sink": {
-									"name": "id",
-									"precision": 10
-								}
-							},
-							{
-								"source": {
-									"name": "name"
-								},
-								"sink": {
-									"name": "colorName"
-								}
-							},
-							{
-								"source": {
-									"name": "rgb"
-								},
-								"sink": {
-									"name": "rgb"
-								}
-							},
-							{
-								"source": {
-									"name": "is_trans"
-								},
-								"sink": {
-									"name": "is_trans"
-								}
-							}
-						],
-						"typeConversion": true,
-						"typeConversionSettings": {
-							"allowDataTruncation": true,
-							"treatBooleanAsNumber": false
-						}
-					}
-				},
-				"inputs": [
-					{
-						"referenceName": "colors",
-						"type": "DatasetReference"
-					}
-				],
-				"outputs": [
-					{
-						"referenceName": "db_colors",
-						"type": "DatasetReference"
-					}
-				]
+					"traceLevel": "Fine"
+				}
 			}
 		],
 		"annotations": []
