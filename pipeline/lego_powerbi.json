@@ -35,6 +35,41 @@
 					"enableStaging": false,
 					"translator": {
 						"type": "TabularTranslator",
+						"mappings": [
+							{
+								"source": {
+									"name": "id"
+								},
+								"sink": {
+									"name": "id",
+									"precision": 10
+								}
+							},
+							{
+								"source": {
+									"name": "name"
+								},
+								"sink": {
+									"name": "colorName"
+								}
+							},
+							{
+								"source": {
+									"name": "rgb"
+								},
+								"sink": {
+									"name": "rgb"
+								}
+							},
+							{
+								"source": {
+									"name": "is_trans"
+								},
+								"sink": {
+									"name": "is_trans"
+								}
+							}
+						],
 						"typeConversion": true,
 						"typeConversionSettings": {
 							"allowDataTruncation": true,
