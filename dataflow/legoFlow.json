@@ -57,16 +57,12 @@
 			"sinks": [
 				{
 					"dataset": {
-						"referenceName": "AzureSqlTable1",
+						"referenceName": "sql_color",
 						"type": "DatasetReference"
 					},
 					"name": "sink1"
 				},
 				{
-					"dataset": {
-						"referenceName": "AzureSqlTable2",
-						"type": "DatasetReference"
-					},
 					"name": "sink2"
 				}
 			],
@@ -148,14 +144,8 @@
 				"     errorHandlingOption: 'stopOnFirstError') ~> sink1",
 				"themes sink(allowSchemaDrift: true,",
 				"     validateSchema: false,",
-				"     deletable:false,",
-				"     insertable:true,",
-				"     updateable:false,",
-				"     upsertable:false,",
-				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
-				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink2"
+				"     skipDuplicateMapOutputs: true) ~> sink2"
 			]
 		}
 	}
