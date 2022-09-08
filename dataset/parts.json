@@ -1,5 +1,5 @@
 {
-	"name": "color",
+	"name": "parts",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "powerBIBlob",
@@ -13,7 +13,7 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "lego_colors.csv",
+				"fileName": "lego_parts.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
@@ -23,15 +23,15 @@
 		},
 		"schema": [
 			{
+				"name": "part_num",
 				"type": "String"
 			},
 			{
+				"name": "name",
 				"type": "String"
 			},
 			{
-				"type": "String"
-			},
-			{
+				"name": "part_cat_id",
 				"type": "String"
 			}
 		]

@@ -1,5 +1,5 @@
 {
-	"name": "sql_themes",
+	"name": "sql_parts",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "outputDB",
@@ -13,7 +13,7 @@
 		"schema": [],
 		"typeProperties": {
 			"schema": "dbo",
-			"table": "themes"
+			"table": "parts"
 		}
 	}
 }
