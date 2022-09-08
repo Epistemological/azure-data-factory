@@ -6,7 +6,7 @@
 		"type": "AzureSqlDatabase",
 		"typeProperties": {
 			"connectionString": "integrated security=False;encrypt=True;connection timeout=30;data source=sandhamn.database.windows.net;initial catalog=vaxholm;user id=denka",
-			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDAzOTI1RERBLTJFRkYtNDFDMC1CMUFELTVGMkFCQjU2Nzg3RV83ZDVlZjJmZC00NTU1LTQ4NmEtYWJiZi0yNDkzZDBhY2FhNTciDQp9"
+			"encryptedCredential": "ew0KICAiVmVyc2lvbiI6ICIyMDE3LTExLTMwIiwNCiAgIlByb3RlY3Rpb25Nb2RlIjogIktleSIsDQogICJTZWNyZXRDb250ZW50VHlwZSI6ICJQbGFpbnRleHQiLA0KICAiQ3JlZGVudGlhbElkIjogIkRBVEFGQUNUT1JZQDQ0MjExQzE3LTVERjYtNDdFMS05RTZGLUZFREJFMUI3N0IzQ181NDUwZTQ4ZS02ZDYyLTRhOGYtOTEzOC1mYzFjZWMwOTNkNjYiDQp9"
 		}
 	}
 }

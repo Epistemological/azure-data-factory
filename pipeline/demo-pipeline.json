@@ -64,7 +64,10 @@
 				"inputs": [
 					{
 						"referenceName": "persons_locations",
-						"type": "DatasetReference"
+						"type": "DatasetReference",
+						"parameters": {
+							"lastname": null
+						}
 					}
 				],
 				"outputs": [

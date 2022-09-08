@@ -18,13 +18,16 @@
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
+				"name": "id",
 				"type": "String"
 			},
 			{
+				"name": "name",
 				"type": "String"
 			}
 		]

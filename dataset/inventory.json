@@ -1,5 +1,5 @@
 {
-	"name": "colors",
+	"name": "inventory",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "powerBIBlob",
@@ -13,24 +13,25 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "lego_colors.csv",
+				"fileName": "lego_inventories.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
+				"name": "id",
 				"type": "String"
 			},
 			{
+				"name": "version",
 				"type": "String"
 			},
 			{
-				"type": "String"
-			},
-			{
+				"name": "set_num",
 				"type": "String"
 			}
 		]

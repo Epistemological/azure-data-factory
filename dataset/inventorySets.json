@@ -1,5 +1,5 @@
 {
-	"name": "inventory_parts",
+	"name": "inventorySets",
 	"properties": {
 		"linkedServiceName": {
 			"referenceName": "powerBIBlob",
@@ -13,13 +13,27 @@
 		"typeProperties": {
 			"location": {
 				"type": "AzureBlobStorageLocation",
-				"fileName": "lego_inventory_parts.csv",
+				"fileName": "lego_inventory_sets.csv",
 				"container": "input"
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
-		"schema": []
+		"schema": [
+			{
+				"name": "inventory_id",
+				"type": "String"
+			},
+			{
+				"name": "set_num",
+				"type": "String"
+			},
+			{
+				"name": "quantity",
+				"type": "String"
+			}
+		]
 	}
 }

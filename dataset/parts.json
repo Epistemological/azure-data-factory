@@ -18,16 +18,20 @@
 			},
 			"columnDelimiter": ",",
 			"escapeChar": "\\",
+			"firstRowAsHeader": true,
 			"quoteChar": "\""
 		},
 		"schema": [
 			{
+				"name": "part_num",
 				"type": "String"
 			},
 			{
+				"name": "name",
 				"type": "String"
 			},
 			{
+				"name": "part_cat_id",
 				"type": "String"
 			}
 		]
