@@ -1,0 +1,47 @@
+{
+	"name": "inventoryParts",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "powerBIBlob",
+			"type": "LinkedServiceReference"
+		},
+		"folder": {
+			"name": "legoAnalysis"
+		},
+		"annotations": [],
+		"type": "DelimitedText",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobStorageLocation",
+				"fileName": "lego_inventory_parts.csv",
+				"container": "input"
+			},
+			"columnDelimiter": ",",
+			"escapeChar": "\\",
+			"firstRowAsHeader": true,
+			"quoteChar": "\""
+		},
+		"schema": [
+			{
+				"name": "inventory_id",
+				"type": "String"
+			},
+			{
+				"name": "part_num",
+				"type": "String"
+			},
+			{
+				"name": "color_id",
+				"type": "String"
+			},
+			{
+				"name": "quantity",
+				"type": "String"
+			},
+			{
+				"name": "is_spare",
+				"type": "String"
+			}
+		]
+	}
+}

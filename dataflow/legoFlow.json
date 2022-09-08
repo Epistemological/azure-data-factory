@@ -6,14 +6,14 @@
 			"sources": [
 				{
 					"dataset": {
-						"referenceName": "inventories",
+						"referenceName": "inventory",
 						"type": "DatasetReference"
 					},
 					"name": "inventories"
 				},
 				{
 					"dataset": {
-						"referenceName": "inventory_parts",
+						"referenceName": "inventoryParts",
 						"type": "DatasetReference"
 					},
 					"name": "inventoryParts"
@@ -89,12 +89,26 @@
 						"type": "DatasetReference"
 					},
 					"name": "sink5"
+				},
+				{
+					"dataset": {
+						"referenceName": "sql_inventoryParts",
+						"type": "DatasetReference"
+					},
+					"name": "sink6"
+				},
+				{
+					"dataset": {
+						"referenceName": "sql_inventory",
+						"type": "DatasetReference"
+					},
+					"name": "sink7"
 				}
 			],
 			"transformations": [],
 			"scriptLines": [
 				"source(output(",
-				"          invent_id as string,",
+				"          id as string,",
 				"          version as string,",
 				"          set_num as string",
 				"     ),",
@@ -102,7 +116,7 @@
 				"     validateSchema: false,",
 				"     ignoreNoFilesFound: false) ~> inventories",
 				"source(output(",
-				"          invent_id as string,",
+				"          inventory_id as string,",
 				"          part_num as string,",
 				"          color_id as string,",
 				"          quantity as string,",
@@ -206,7 +220,27 @@
 				"     format: 'table',",
 				"     skipDuplicateMapInputs: true,",
 				"     skipDuplicateMapOutputs: true,",
-				"     errorHandlingOption: 'stopOnFirstError') ~> sink5"
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink5",
+				"inventoryParts sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink6",
+				"inventories sink(allowSchemaDrift: true,",
+				"     validateSchema: false,",
+				"     deletable:false,",
+				"     insertable:true,",
+				"     updateable:false,",
+				"     upsertable:false,",
+				"     format: 'table',",
+				"     skipDuplicateMapInputs: true,",
+				"     skipDuplicateMapOutputs: true,",
+				"     errorHandlingOption: 'stopOnFirstError') ~> sink7"
 			]
 		}
 	}
